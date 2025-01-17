@@ -9,7 +9,7 @@ document.getElementById('coursesCompleted').addEventListener('input', function()
 
 document.getElementById('creditsCompleted').addEventListener('input', function() {
     const creditsCompleted = parseInt(this.value);
-    if (!isNaN(creditsCompleted)) {
+    if (!isNaN(creditsCompleted) && creditsCompleted >= 0) {
         document.getElementById('coursesCompleted').value = Math.floor(creditsCompleted / 3);
     } else {
         document.getElementById('coursesCompleted').value = '';
@@ -17,6 +17,12 @@ document.getElementById('creditsCompleted').addEventListener('input', function()
 });
 
 document.getElementById('nextButton').addEventListener('click', function() {
+    const currentCgpa = parseFloat(document.getElementById('currentCgpa').value);
+    if (currentCgpa < 0 || currentCgpa > 4) {
+        alert("CGPA must be between 0 and 4.");
+        return;
+    }
+
     document.getElementById('currentCourses').style.display = 'block';
     const numCourses = document.getElementById('coursesTaken').value;
     const courseInputs = document.getElementById('courseInputs');
@@ -35,6 +41,12 @@ document.getElementById('calculateButton').addEventListener('click', function() 
     let coursesCompleted = parseInt(document.getElementById('coursesCompleted').value);
     const creditsCompleted = parseInt(document.getElementById('creditsCompleted').value);
     
+    // Validate credits
+    if (creditsCompleted < 0) {
+        alert("Credits cannot be negative.");
+        return;
+    }
+
     // Calculate courses completed if credits are provided
     if (creditsCompleted) {
         coursesCompleted = Math.floor(creditsCompleted / 3);
@@ -45,7 +57,12 @@ document.getElementById('calculateButton').addEventListener('click', function() 
     
     let totalCurrentCgpa = 0;
     for (let input of courseInputs) {
-        totalCurrentCgpa += parseFloat(input.value);
+        const courseCgpa = parseFloat(input.value);
+        if (courseCgpa < 0 || courseCgpa > 4) {
+            alert("Each course CGPA must be between 0 and 4.");
+            return;
+        }
+        totalCurrentCgpa += courseCgpa;
     }
 
     const newCgpa = ((coursesCompleted * currentCgpa) + totalCurrentCgpa) / (coursesCompleted + numCourses);
