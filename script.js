@@ -79,3 +79,13 @@ document.getElementById('calculateAgainButton').addEventListener('click', functi
     document.getElementById('result').style.display = 'none';
     document.getElementById('currentCourses').style.display = 'none';
 });
+
+// New functionality to adjust scroll position when input fields are focused
+const inputs = document.querySelectorAll('input');
+inputs.forEach(input => {
+    input.addEventListener('focus', function() {
+        setTimeout(() => {
+            this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300); // Delay to allow keyboard to open
+    });
+});

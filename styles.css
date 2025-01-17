@@ -69,7 +69,7 @@ button:hover {
 }
 
 .social-links {
-    position: absolute;
+    position: relative; /* Changed from absolute to relative */
     top: 20px;
     right: 20px;
 }
@@ -83,4 +83,19 @@ button:hover {
 .footer-links {
     text-align: center;
     margin-top: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 100%; /* Full width on small screens */
+        padding: 15px; /* Reduced padding */
+    }
+
+    .social-links {
+        position: relative; /* Ensure it doesn't overlap */
+        top: 0; /* Reset top position */
+        right: 0; /* Reset right position */
+        text-align: center; /* Center align on small screens */
+    }
 }
