@@ -32,7 +32,7 @@ This CGPA Calculator is a simple and user-friendly tool designed specifically fo
 ### Local Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cgpa-calculator-bracu.git
+   git clone https://github.com/programophile/CGPA-Calculator-For-BRAC-University-Students-BRACU
    ```
 2. Open the `index.html` file in your browser.
 
