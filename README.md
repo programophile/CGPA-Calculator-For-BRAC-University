@@ -37,7 +37,7 @@ This CGPA Calculator is a simple and user-friendly tool designed specifically fo
 2. Open the `index.html` file in your browser.
 
 ### Live Version
-- Access the live version of the calculator at: [GitHub Pages URL](https://github.com/programophile/CGPA-Calculator-For-BRAC-University-Students-BRACU)
+- Access the live version of the calculator at: [GitHub Pages URL](https://programophile.github.io/CGPA-Calculator-For-BRAC-University-Students-BRACU/)
 
 ---
 
