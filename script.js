@@ -78,3 +78,4 @@ document.getElementById('calculateAgainButton').addEventListener('click', functi
     document.getElementById('courseInputs').innerHTML = '';
     document.getElementById('result').style.display = 'none';
     document.getElementById('currentCourses').style.display = 'none';
+});
