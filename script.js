@@ -69,3 +69,12 @@ document.getElementById('calculateButton').addEventListener('click', function() 
     document.getElementById('newCgpa').innerText = newCgpa.toFixed(2);
     document.getElementById('result').style.display = 'block';
 });
+
+// New functionality for calculateAgainButton
+document.getElementById('calculateAgainButton').addEventListener('click', function() {
+    document.getElementById('currentCgpa').value = '';
+    document.getElementById('coursesCompleted').value = '';
+    document.getElementById('creditsCompleted').value = '';
+    document.getElementById('courseInputs').innerHTML = '';
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('currentCourses').style.display = 'none';
